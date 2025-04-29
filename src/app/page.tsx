@@ -53,7 +53,7 @@ export default function Home() {
             <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-1.5 rounded-md">
               <Building2 className="h-5 w-5 text-white" />
             </div>
-            <span className="font-semibold text-xl">MV Company</span>
+            <span className="font-semibold text-xl">OfficeHour</span>
           </div>
           <div className="flex items-center gap-6">
             <nav className="hidden md:flex gap-6">
@@ -91,7 +91,7 @@ export default function Home() {
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Welcome to <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">MV Company</span>
+              Welcome to <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">OfficeHour</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-[600px]">
               Streamline your office operations with our comprehensive management solution. 
@@ -168,7 +168,7 @@ export default function Home() {
               Comprehensive Office Management
             </h2>
             <p className="text-muted-foreground text-lg">
-              MV Company offers a complete suite of features designed to streamline
+              OfficeHour offers a complete suite of features designed to streamline
               your workflow and boost productivity.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function Home() {
               <span>Why Choose Us</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              Benefits of Using MV Company
+              Benefits of Using OfficeHour
             </h2>
             <p className="text-muted-foreground text-lg">
               Discover how our platform can transform your business operations
@@ -387,7 +387,7 @@ export default function Home() {
           <div className="max-w-[800px] mx-auto bg-card/80 backdrop-blur-sm rounded-xl border border-white/20 p-10 shadow-xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Ready to Transform Your Office Management?</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Start streamlining your operations today with MV Company.
+              Start streamlining your operations today with OfficeHour.
             </p>
             <Button 
               size="lg" 
@@ -411,7 +411,7 @@ export default function Home() {
             </div>
           </div>
           <p className="text-muted-foreground text-sm mb-4">
-            © {new Date().getFullYear()} MV Company. All rights reserved.
+            © {new Date().getFullYear()} OfficeHour. All rights reserved.
           </p>
           
           {/* Developer Credits */}

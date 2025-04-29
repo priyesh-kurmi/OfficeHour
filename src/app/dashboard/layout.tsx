@@ -305,7 +305,7 @@ export default function DashboardLayout({
                   )}
                 >
                   <Building2 className="h-6 w-6" />
-                  {!sidebarCollapsed && <span>MV Company</span>}
+                  {!sidebarCollapsed && <span>OfficeHour</span>}
                 </Link>
               </div>
 
@@ -394,7 +394,7 @@ export default function DashboardLayout({
                       </TooltipTrigger>
                       <TooltipContent side="right" className="max-w-[220px] p-3">
                         <div className="text-center">
-                          <p className="font-medium">MV Company</p>
+                          <p className="font-medium">OfficeHour</p>
                           <p className="text-xs text-muted-foreground mt-1">
                             © {new Date().getFullYear()} All rights reserved
                           </p>
@@ -412,7 +412,7 @@ export default function DashboardLayout({
                   <div className="space-y-2">
                     {/* Copyright line */}
                     <div className="flex items-center justify-between text-[11px] text-muted-foreground/70">
-                      <span>MV Company</span>
+                      <span>OfficeHour</span>
                       <span>© {new Date().getFullYear()}</span>
                     </div>
                     
@@ -451,7 +451,7 @@ export default function DashboardLayout({
                     className="flex items-center gap-1 font-semibold"
                   >
                     <Building2 className="h-6 w-6" />
-                    <span className="font-semibold">MV Company</span>
+                    <span className="font-semibold">OfficeHour</span>
                   </Link>
                 </div>
 
@@ -498,7 +498,7 @@ export default function DashboardLayout({
                     className="flex items-center gap-2 font-semibold"
                   >
                     <Building2 className="h-6 w-6" />
-                    <span>MV Company</span>
+                    <span>OfficeHour</span>
                   </Link>
                   <Button
                     variant="ghost"
