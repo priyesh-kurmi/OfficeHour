@@ -1,4 +1,8 @@
-# Office Management System
+<p align="center">
+  <img src="https://i.ibb.co/vvJ0YBmw/image-1.png" alt="OfficeHour Logo" width="400">
+</p>
+
+# OfficeHour - Office Management System
 
 ## 📋 Table of Contents
 
@@ -46,8 +50,7 @@ OfficeHour addresses these challenges by providing:
 
 ## 🚀 Live Demo
 
-Explore the live demo and learn more about OfficeHour:
-
+Explore the live demo to experience OfficeHour in action, including its key features and user interface:
 [**Visit the Website**](https://officehour.vercel.app)
 
 <!-- > The website includes:
@@ -640,5 +643,5 @@ Thank you for taking the time to explore OfficeHour! We appreciate your interest
 ---
 
 <p align="center">
-  <i>Crafted with dedication and passion by Priyesh Kurmi</i>
+  <i>Developed with dedication and passion by Priyesh Kurmi</i>
 </p>
