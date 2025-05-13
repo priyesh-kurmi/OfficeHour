@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function Home() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [heroVisible, setHeroVisible] = useState(true);
+  const heroRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,8 +22,34 @@ export default function Home() {
     };
   }, [prevScrollPos]);
 
+  // Set up intersection observer for hero section
+  useEffect(() => {
+    const options = {
+      root: null, // use viewport as root
+      rootMargin: "0px",
+      threshold: 0.25, // trigger when 25% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        setHeroVisible(entry.isIntersecting);
+      });
+    }, options);
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
+  }, []);
+
   return (
     <main className="min-h-screen">
+      {/* Header - Rounded and detached */}
       {/* Header - Rounded and detached */}
       <header
         className={`fixed w-full z-[100] transition-all duration-300 ${
@@ -35,52 +63,123 @@ export default function Home() {
 
           {/* Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link
-              href="/"
-              className="font-medium text-gray-700 hover:text-blue-600 transition"
-            >
+            <a href="/" className="hover-underline-animation">
               Home
-            </Link>
-            <Link
-              href="/features"
-              className="font-medium text-gray-700 hover:text-blue-600 transition"
-            >
+            </a>
+            <a href="/features" className="hover-underline-animation">
               Features
-            </Link>
-            <Link
-              href="/pricing"
-              className="font-medium text-gray-700 hover:text-blue-600 transition"
-            >
+            </a>
+            <a href="/pricing" className="hover-underline-animation">
               Pricing
-            </Link>
-            <Link
-              href="/contact"
-              className="font-medium text-gray-700 hover:text-blue-600 transition"
-            >
+            </a>
+            <a href="/contact" className="hover-underline-animation">
               Contact Us
-            </Link>
-            <Link
-              href="/about"
-              className="font-medium text-gray-700 hover:text-blue-600 transition"
-            >
+            </a>
+            <a href="/about" className="hover-underline-animation">
               About Us
-            </Link>
+            </a>
           </nav>
 
           {/* Buttons */}
           <div className="flex items-center space-x-4">
-            <button className="px-4 py-2 text-blue-600 font-medium border border-blue-600 rounded-md hover:bg-blue-50 transition">
-              Login
-            </button>
-            <button className="px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition">
-              Sign up for free
-            </button>
+            <button className="btn-fancy">Login</button>
+            <button className="btn-fancy">Sign up for free</button>
           </div>
         </div>
+
+        <style jsx>{`
+          .hover-underline-animation {
+            font-size: 15px;
+            color: #000000;
+            font-family: inherit;
+            font-weight: normal;
+            cursor: pointer;
+            position: relative;
+            border: none;
+            background: none;
+            text-transform: uppercase;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: color;
+            text-decoration: none;
+          }
+
+          .hover-underline-animation:focus,
+          .hover-underline-animation:hover {
+            color: #2563eb;
+          }
+
+          .hover-underline-animation:after {
+            content: "";
+            pointer-events: none;
+            bottom: -2px;
+            left: 50%;
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: #2563eb;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: width, left;
+          }
+
+          .hover-underline-animation:focus:after,
+          .hover-underline-animation:hover:after {
+            width: 100%;
+            left: 0%;
+          }
+
+          .btn-fancy {
+            width: 130px;
+            height: 40px;
+            font-size: 1.1em;
+            cursor: pointer;
+            background-color: #171717;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.4s;
+            padding: 8px 16px;
+            font-weight: 500;
+          }
+
+          .btn-fancy:hover {
+            border-radius: 5px;
+            transform: translateY(-10px);
+            box-shadow: 0 7px 0 -2px #f85959, 0 15px 0 -4px #39a2db,
+              0 16px 10px -3px #39a2db;
+          }
+
+          .btn-fancy:active {
+            transition: all 0.2s;
+            transform: translateY(-5px);
+            box-shadow: 0 2px 0 -2px #f85959, 0 8px 0 -4px #39a2db,
+              0 12px 10px -3px #39a2db;
+          }
+        `}</style>
       </header>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section
+        ref={heroRef}
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      >
+        {/* Background Image with Animation */}
+        <div
+          className={`absolute inset-0 z-[15] transition-all duration-1000 ${
+            heroVisible
+              ? "opacity-85 translate-y-0"
+              : "opacity-0 translate-y-20"
+          }`}
+          style={{
+            backgroundImage: "url('/9161244.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            pointerEvents: "none", // Allow clicking through the image
+          }}
+        ></div>
+
         {/* Grid paper background */}
         <div className="absolute inset-0 grid-paper-bg"></div>
 
@@ -148,6 +247,39 @@ export default function Home() {
                 transparent
               );
             background-size: 55px 55px;
+          }
+
+          @keyframes float {
+            0% {
+              transform: translateY(0) rotate(0);
+            }
+            50% {
+              transform: translateY(-15px) rotate(5deg);
+            }
+            100% {
+              transform: translateY(0) rotate(0);
+            }
+          }
+
+          @keyframes float-delay {
+            0% {
+              transform: translateY(0) rotate(0);
+            }
+            50% {
+              transform: translateY(-10px) rotate(-5deg);
+            }
+            100% {
+              transform: translateY(0) rotate(0);
+            }
+          }
+
+          .animate-float {
+            animation: float 6s ease-in-out infinite;
+          }
+
+          .animate-float-delay {
+            animation: float-delay 7s ease-in-out infinite;
+            animation-delay: 1s;
           }
         `}</style>
       </section>
