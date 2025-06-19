@@ -32,6 +32,7 @@ export default function LoginPage() {
   const router = useRouter();
   const [blocked, setBlocked] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDemoLogin, setIsDemoLogin] = useState(false);
 
   // Read URL parameters using window.location
   useEffect(() => {
@@ -119,9 +120,69 @@ export default function LoginPage() {
     }
   };
 
+  const handleDemoLogin = async () => {
+    setIsDemoLogin(true);
+    try {
+      const result = await signIn("credentials", {
+        redirect: false,
+        email: "kpriyesh.designs@gmail.com",
+        password: "Sahil@2002",
+      });
+
+      if (result?.error) {
+        // Check specifically for blocked account error
+        if (result.error === "AccountBlocked" || result.error.includes("blocked")) {
+          setIsDemoLogin(false);
+          router.push("/login?blocked=true");
+          return;
+        }
+
+        toast.error("Demo login failed");
+        setIsDemoLogin(false);
+        return;
+      }
+
+      // Get the session to determine role
+      const response = await axios.get("/api/auth/session");
+      const sessionData = response.data;
+
+      toast.success("Demo login successful");
+
+      // Redirect based on user role
+      if (sessionData?.user?.role === "ADMIN") {
+        router.push("/dashboard/admin");
+      } else if (sessionData?.user?.role === "PARTNER") {
+        router.push("/dashboard/partner");
+      } else if (["PERMANENT_CLIENT", "GUEST_CLIENT"].includes(sessionData?.user?.role)) {
+        router.push("/dashboard/client");
+      } else if (["BUSINESS_EXECUTIVE", "BUSINESS_CONSULTANT"].includes(sessionData?.user?.role)) {
+        // Redirect junior staff to their specific dashboard
+        router.push("/dashboard/junior");
+      } else {
+        router.push("/dashboard");
+      }
+
+      router.refresh();
+    } catch {
+      toast.error("Demo login failed");
+      setIsDemoLogin(false);
+    }
+  };
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-background p-4">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen bg-background p-4">
+      {/* Go to Home link */}
+      <div className="absolute top-4 left-4">
+        <Link 
+          href="/" 
+          className="text-sm text-primary hover:underline flex items-center gap-1"
+        >
+          ← Go to Home
+        </Link>
+      </div>
+      
+      <div className="flex items-center justify-center min-h-screen">
+        <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <h1 className="text-2xl font-bold">Login</h1>
           <p className="text-muted-foreground">
@@ -171,7 +232,7 @@ export default function LoginPage() {
               <Button
                 type="submit"
                 className="w-full"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isDemoLogin}
               >
                 {isSubmitting ? (
                   <>
@@ -179,6 +240,31 @@ export default function LoginPage() {
                   </>
                 ) : (
                   "Log In"
+                )}
+              </Button>
+              
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <span className="w-full border-t" />
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                  <span className="bg-background px-2 text-muted-foreground">Or</span>
+                </div>
+              </div>
+
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full"
+                disabled={isSubmitting || isDemoLogin}
+                onClick={handleDemoLogin}
+              >
+                {isDemoLogin ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Logging in with demo...
+                  </>
+                ) : (
+                  "Try Demo Account"
                 )}
               </Button>
             </form>
@@ -190,6 +276,7 @@ export default function LoginPage() {
           </Link>
         </CardFooter>
       </Card>
+      </div>
     </div>
   );
 }

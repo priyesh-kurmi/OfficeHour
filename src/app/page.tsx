@@ -13,8 +13,8 @@ export default function Home() {
 
   // Preload the hero background image as early as possible
   useEffect(() => {
-    // Immediately set a light background
-    document.body.style.backgroundColor = "#ffffff";
+    // Use theme-aware background
+    document.body.style.backgroundColor = "";
 
     // Preload image
     const img = new Image();
@@ -70,12 +70,11 @@ export default function Home() {
       <Head>
         {/* Preload critical image */}
         <link rel="preload" href="/9161244.png" as="image" />
-        {/* Ensure white background before JS loads */}
+        {/* Ensure light theme for landing page */}
         <style
           dangerouslySetInnerHTML={{
             __html: `
             body, html { 
-              background-color: white !important; 
               margin: 0;
               padding: 0;
             }
@@ -94,7 +93,7 @@ export default function Home() {
             visible ? "top-4" : "-top-28"
           }`}
         >
-          <div className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center bg-white rounded-full shadow-lg">
+          <div className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center bg-white/90 backdrop-blur-md rounded-full shadow-lg border border-gray-200">
             <div className="flex items-center">
               <h1 className="text-lg font-bold text-black">OfficeHour</h1>
             </div>
@@ -120,8 +119,12 @@ export default function Home() {
 
             {/* Buttons - More compact */}
             <div className="flex items-center space-x-3">
-              <button className="btn-fancy">Login</button>
-              <button className="btn-fancy">Sign up</button>
+              <Link href="/login">
+                <button className="btn-fancy">Login</button>
+              </Link>
+              <Link href="/login">
+                <button className="btn-fancy">Sign up</button>
+              </Link>
             </div>
           </div>
 
@@ -240,7 +243,9 @@ export default function Home() {
                 From managing teams to tracking tasks and clients, OfficeHour
                 keeps everything—and everyone—in sync.
               </p>
-              <button className="btn-glow">Get Started Free</button>
+              <Link href="/login">
+                <button className="btn-glow">Get Started Free</button>
+              </Link>
             </div>
           </div>
 
@@ -314,7 +319,7 @@ export default function Home() {
               position: relative;
               padding: 12px 20px; /* Reduced padding for shorter width */
               border-radius: 7px;
-              border: 1px solid #000; /* Changed border to black */
+              border: 1px solid #000; /* Black border */
               font-size: 15px; /* Slightly smaller font */
               text-transform: uppercase;
               font-weight: 600;
@@ -417,7 +422,7 @@ export default function Home() {
           <div className="container mx-auto px-6 relative z-10">
             <div className="w-full max-w-4xl mx-auto px-6 py-10 text-center">
               <div className="mb-10 transform hover:scale-105 transition duration-500">
-                <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-blue-100 shadow-lg">
+                <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-12 w-12 text-black"
@@ -787,29 +792,20 @@ export default function Home() {
             <div className="absolute bottom-[15%] right-[5%] w-24 h-20 rounded-tl-lg rounded-tr-lg rounded-bl-lg bg-yellow-200 opacity-20 transform -rotate-3 animate-float-delay"></div>
 
             <div className="container mx-auto px-6 relative z-10">
-              <div className="flex flex-col md:flex-row-reverse items-center max-w-6xl mx-auto">
+              <div className="flex flex-col md:flex-row-reverse items-stretch max-w-7xl mx-auto">
                 {/* Right side - Image */}
-                <div className="w-full md:w-1/2 mb-10 md:mb-0 px-4">
-                  <div className="bg-yellow-100 rounded-lg p-6 w-full h-96 flex items-center justify-center shadow-xl transform transition duration-500 hover:scale-105">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-32 w-32 text-yellow-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
-                      />
-                    </svg>
+                <div className="w-full md:w-3/5 mb-10 md:mb-0 px-4 flex">
+                  <div className="bg-transparent rounded-lg w-full min-h-[350px] shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden">
+                    <img 
+                      src="/chat.png" 
+                      alt="Group Chat Interface"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
 
                 {/* Left side - Content */}
-                <div className="w-full md:w-1/2 md:pr-10 px-4">
+                <div className="w-full md:w-2/5 md:pr-10 px-4 flex flex-col justify-center">
                   <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                     Group Chat
                   </h3>
@@ -1018,7 +1014,8 @@ export default function Home() {
             </p>
 
             {/* Star Button */}
-            <button className="star-button relative">
+            <Link href="/login">
+              <button className="star-button relative">
               Create Your Free Account
               <div className="star-1">
                 <svg
@@ -1165,6 +1162,7 @@ export default function Home() {
                 </svg>
               </div>
             </button>
+            </Link>
           </div>
 
           {/* Add this CSS for the star button */}
