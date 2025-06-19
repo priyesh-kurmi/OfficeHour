@@ -121,7 +121,7 @@ export default function Home() {
             {/* Buttons - More compact */}
             <div className="flex items-center space-x-3">
               <button className="btn-fancy">Login</button>
-              <button className="btn-fancy">Sign up for free</button>
+              <button className="btn-fancy">Sign up</button>
             </div>
           </div>
 
@@ -429,7 +429,7 @@ export default function Home() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                      d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 2H21l-3 6 3 6h-8.5l-1-2H5a2 2 0 00-2 2zm9-13.5V9"
                     />
                   </svg>
                 </div>
@@ -505,29 +505,20 @@ export default function Home() {
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
-              <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto">
+              <div className="flex flex-col md:flex-row items-stretch max-w-7xl mx-auto">
                 {/* Left side - Image */}
-                <div className="w-full md:w-1/2 mb-10 md:mb-0 px-4">
-                  <div className="bg-blue-100 rounded-lg p-6 w-full h-96 flex items-center justify-center shadow-xl transform transition duration-500 hover:scale-105">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-32 w-32 text-blue-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                      />
-                    </svg>
+                <div className="w-full md:w-3/5 mb-10 md:mb-0 px-4">
+                  <div className="bg-transparent rounded-lg w-full min-h-[350px] shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden">
+                    <img 
+                      src="/user.png" 
+                      alt="User & Role Management Dashboard"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
 
                 {/* Right side - Content */}
-                <div className="w-full md:w-1/2 md:pl-10 px-4">
+                <div className="w-full md:w-2/5 md:pl-10 px-4 flex flex-col justify-center">
                   <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                     User & Role Management
                   </h3>
@@ -628,29 +619,20 @@ export default function Home() {
             <div className="absolute bottom-[25%] right-[10%] w-24 h-12 bg-green-200 rounded-md opacity-20 transform -rotate-3 animate-float-delay"></div>
 
             <div className="container mx-auto px-6 relative z-10">
-              <div className="flex flex-col md:flex-row-reverse items-center max-w-6xl mx-auto">
+              <div className="flex flex-col md:flex-row-reverse items-stretch max-w-7xl mx-auto">
                 {/* Right side - Image */}
-                <div className="w-full md:w-1/2 mb-10 md:mb-0 px-4">
-                  <div className="bg-green-100 rounded-lg p-6 w-full h-96 flex items-center justify-center shadow-xl transform transition duration-500 hover:scale-105">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-32 w-32 text-green-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-                      />
-                    </svg>
+                <div className="w-full md:w-3/5 mb-10 md:mb-0 px-4 flex">
+                  <div className="bg-transparent rounded-lg w-full min-h-[350px] shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden">
+                    <img 
+                      src="/task.png" 
+                      alt="Task Management Dashboard"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
 
                 {/* Left side - Content */}
-                <div className="w-full md:w-1/2 md:pr-10 px-4">
+                <div className="w-full md:w-2/5 md:pr-10 px-4 flex flex-col justify-center">
                   <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                     Task Management
                   </h3>
@@ -724,29 +706,20 @@ export default function Home() {
             <div className="absolute bottom-[20%] left-[5%] w-32 h-16 bg-purple-200 rounded-md opacity-20 transform -rotate-6 animate-float-delay"></div>
 
             <div className="container mx-auto px-6 relative z-10">
-              <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto">
+              <div className="flex flex-col md:flex-row items-stretch max-w-7xl mx-auto">
                 {/* Left side - Image */}
-                <div className="w-full md:w-1/2 mb-10 md:mb-0 px-4">
-                  <div className="bg-purple-100 rounded-lg p-6 w-full h-96 flex items-center justify-center shadow-xl transform transition duration-500 hover:scale-105">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-32 w-32 text-purple-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    </svg>
+                <div className="w-full md:w-3/5 mb-10 md:mb-0 px-4 flex">
+                  <div className="bg-transparent rounded-lg w-full min-h-[350px] shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden">
+                    <img 
+                      src="/client.png" 
+                      alt="Client Management Dashboard"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
 
                 {/* Right side - Content */}
-                <div className="w-full md:w-1/2 md:pl-10 px-4">
+                <div className="w-full md:w-2/5 md:pl-10 px-4 flex flex-col justify-center">
                   <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                     Client Management
                   </h3>
@@ -870,7 +843,7 @@ export default function Home() {
           </div>
 
           {/* Feature Section: Smart Dashboard */}
-          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-tr from-indigo-50 to-blue-50">
+          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-tr from-orange-50 to-orange-100">
             {/* Background pattern - dashboard graphs */}
             <div className="absolute inset-0 opacity-5">
               <svg width="100%" height="100%" className="absolute">
@@ -927,33 +900,24 @@ export default function Home() {
             <div className="absolute bottom-[10%] left-[10%] w-32 h-20 rounded-lg bg-indigo-200 opacity-20 transform -rotate-6 animate-float-delay"></div>
 
             <div className="container mx-auto px-6 relative z-10">
-              <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto">
+              <div className="flex flex-col md:flex-row items-stretch max-w-7xl mx-auto">
                 {/* Left side - Image */}
-                <div className="w-full md:w-1/2 mb-10 md:mb-0 px-4">
-                  <div className="bg-indigo-100 rounded-lg p-6 w-full h-96 flex items-center justify-center shadow-xl transform transition duration-500 hover:scale-105">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-32 w-32 text-indigo-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                      />
-                    </svg>
+                <div className="w-full md:w-3/5 mb-10 md:mb-0 px-4 flex">
+                  <div className="bg-transparent rounded-lg w-full min-h-[350px] shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden">
+                    <img 
+                      src="/dashboard.png" 
+                      alt="Smart Dashboard"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
 
                 {/* Right side - Content */}
-                <div className="w-full md:w-1/2 md:pl-10 px-4">
+                <div className="w-full md:w-2/5 md:pl-10 px-4 flex flex-col justify-center">
                   <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                     Smart Dashboard
                   </h3>
-                  <h4 className="text-xl md:text-2xl font-semibold text-indigo-600 mb-4">
+                  <h4 className="text-xl md:text-2xl font-semibold text-orange-600 mb-4">
                     Insights That Drive Action
                   </h4>
                   <p className="text-lg text-gray-700 mb-6">
@@ -1358,93 +1322,30 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 bg-gray-900 text-gray-400">
-          <div className="container mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between">
-              <div className="mb-8 md:mb-0">
-                <h3 className="text-xl font-bold text-white mb-4">
-                  OfficeHour
-                </h3>
-                <p className="max-w-xs">
-                  Streamline your business operations and boost productivity
-                  with OfficeHour.
+        <footer className="py-16 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+          <div className="container mx-auto px-6 text-center">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold text-white mb-4">
+                OfficeHour
+              </h3>
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Streamline your business operations and boost productivity with OfficeHour. 
+                The all-in-one solution for modern teams.
+              </p>
+            </div>
+            
+            <div className="border-t border-gray-700 pt-8">
+              <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p className="text-gray-400">
+                  © 2025 OfficeHour. All rights reserved.
+                </p>
+                <p className="text-gray-400 flex items-center">
+                  Made with 
+                  <span className="text-red-500 mx-1 animate-pulse">♥</span>
+                  by 
+                  <span className="text-orange-400 ml-1 font-semibold">Priyesh Kurmi</span>
                 </p>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-                <div>
-                  <h4 className="text-white font-semibold mb-4">Product</h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <a href="#" className="hover:text-white transition">
-                        Features
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="hover:text-white transition">
-                        Pricing
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="hover:text-white transition">
-                        Testimonials
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="hover:text-white transition">
-                        FAQ
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold mb-4">Company</h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <a href="#" className="hover:text-white transition">
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="hover:text-white transition">
-                        Careers
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="hover:text-white transition">
-                        Contact
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="hover:text-white transition">
-                        Blog
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold mb-4">Legal</h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <a href="#" className="hover:text-white transition">
-                        Privacy Policy
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="hover:text-white transition">
-                        Terms of Service
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="hover:text-white transition">
-                        Cookie Policy
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="mt-12 pt-8 border-t border-gray-800 text-center">
-              <p>© 2023 OfficeHour. All rights reserved.</p>
             </div>
           </div>
         </footer>
