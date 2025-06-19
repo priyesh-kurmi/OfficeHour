@@ -118,7 +118,7 @@ export default function Home() {
             </nav>
 
             {/* Buttons - More compact */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 md:space-x-3">
               <Link href="/login">
                 <button className="btn-fancy">Login</button>
               </Link>
@@ -171,17 +171,26 @@ export default function Home() {
             }
 
             .btn-fancy {
-              width: 130px;
-              height: 40px;
-              font-size: 1.1em;
+              width: 100px;
+              height: 35px;
+              font-size: 0.9em;
               cursor: pointer;
               background-color: #171717;
               color: #fff;
               border: none;
               border-radius: 5px;
               transition: all 0.4s;
-              padding: 8px 16px;
+              padding: 6px 12px;
               font-weight: 500;
+            }
+
+            @media (min-width: 768px) {
+              .btn-fancy {
+                width: 130px;
+                height: 40px;
+                font-size: 1.1em;
+                padding: 8px 16px;
+              }
             }
 
             .btn-fancy:hover {
@@ -234,12 +243,12 @@ export default function Home() {
           <div className="container mx-auto px-6 relative z-10">
             {/* Center - Main content */}
             <div className="w-full max-w-4xl mx-auto text-center">
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
                 Run your business
                 <br />
                 like a pro!!
               </h2>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 md:mb-8 max-w-2xl mx-auto">
                 From managing teams to tracking tasks and clients, OfficeHour
                 keeps everything—and everyone—in sync.
               </p>
@@ -439,10 +448,10 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-8">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:mb-8">
                 Our Mission
               </h3>
-              <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
                 At OfficeHour, we help business owners easily manage their
                 teams, tasks, and clients—all in one place.
                 <br />
@@ -458,7 +467,7 @@ export default function Home() {
         {/* Feature Sections with Sticky Scrolling Effect */}
         <div className="relative">
           {/* Feature Section: User & Role Management */}
-          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-tr from-blue-50 to-blue-100">
+          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-tr from-blue-50 to-blue-100 rounded-tl-[4rem] rounded-tr-[4rem]">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-5">
               <div
@@ -512,32 +521,32 @@ export default function Home() {
             <div className="container mx-auto px-6 relative z-10">
               <div className="flex flex-col md:flex-row items-stretch max-w-7xl mx-auto">
                 {/* Left side - Image */}
-                <div className="w-full md:w-3/5 mb-10 md:mb-0 px-4">
-                  <div className="bg-transparent rounded-lg w-full min-h-[350px] shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden">
+                <div className="w-full md:w-3/5 mb-6 md:mb-10 px-2 md:px-4">
+                  <div className="bg-transparent rounded-lg w-full shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden flex items-center justify-center">
                     <img 
                       src="/user.png" 
                       alt="User & Role Management Dashboard"
-                      className="w-full h-full object-contain"
+                      className="w-full h-auto object-contain rounded-lg"
                     />
                   </div>
                 </div>
 
                 {/* Right side - Content */}
-                <div className="w-full md:w-2/5 md:pl-10 px-4 flex flex-col justify-center">
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <div className="w-full md:w-2/5 md:pl-10 px-2 md:px-4 flex flex-col justify-center">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                     User & Role Management
                   </h3>
-                  <h4 className="text-xl md:text-2xl font-semibold text-blue-600 mb-4">
+                  <h4 className="text-lg md:text-xl lg:text-2xl font-semibold text-blue-600 mb-3 md:mb-4">
                     Put the Right People in the Right Seats
                   </h4>
-                  <p className="text-lg text-gray-700 mb-6">
+                  <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                     No more access chaos.
                   </p>
-                  <p className="text-lg text-gray-700 mb-6">
+                  <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                     Create and manage users with laser-precise Role-Based Access
                     Control for:
                   </p>
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-2 md:space-y-4 mb-6 md:mb-8">
                     <li className="flex items-start transform transition duration-300 hover:translate-x-2 text-black">
                       <span className="font-medium mr-2 text-black">•</span>
                       <span>
@@ -567,7 +576,7 @@ export default function Home() {
                       </span>
                     </li>
                   </ul>
-                  <p className="text-lg font-medium text-gray-800">
+                  <p className="text-base md:text-lg font-medium text-gray-800">
                     You decide who sees what—nothing more, nothing less.
                   </p>
                 </div>
@@ -576,7 +585,7 @@ export default function Home() {
           </div>
 
           {/* Feature Section: Task Management */}
-          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 to-white">
+          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 to-white rounded-tl-[4rem] rounded-tr-[4rem]">
             {/* Background pattern - checklist pattern */}
             <div className="absolute inset-0 opacity-5">
               <svg
@@ -626,32 +635,32 @@ export default function Home() {
             <div className="container mx-auto px-6 relative z-10">
               <div className="flex flex-col md:flex-row-reverse items-stretch max-w-7xl mx-auto">
                 {/* Right side - Image */}
-                <div className="w-full md:w-3/5 mb-10 md:mb-0 px-4 flex">
-                  <div className="bg-transparent rounded-lg w-full min-h-[350px] shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden">
+                <div className="w-full md:w-3/5 mb-6 md:mb-10 px-2 md:px-4 flex">
+                  <div className="bg-transparent rounded-lg w-full shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden flex items-center justify-center">
                     <img 
                       src="/task.png" 
                       alt="Task Management Dashboard"
-                      className="w-full h-full object-contain"
+                      className="w-full h-auto object-contain rounded-lg"
                     />
                   </div>
                 </div>
 
                 {/* Left side - Content */}
-                <div className="w-full md:w-2/5 md:pr-10 px-4 flex flex-col justify-center">
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <div className="w-full md:w-2/5 md:pr-10 px-2 md:px-4 flex flex-col justify-center">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                     Task Management
                   </h3>
-                  <h4 className="text-xl md:text-2xl font-semibold text-green-600 mb-4">
+                  <h4 className="text-lg md:text-xl lg:text-2xl font-semibold text-green-600 mb-3 md:mb-4">
                     Make Work Flow Like Clockwork
                   </h4>
-                  <p className="text-lg text-gray-700 mb-6">
+                  <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                     Stop wasting time in endless status meetings.
                   </p>
-                  <p className="text-lg text-gray-700 mb-6">
+                  <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                     With OfficeHour, seniors can assign tasks directly to their
                     juniors, track progress, and hit deadlines without chasing.
                   </p>
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-2 md:space-y-4 mb-6 md:mb-8">
                     <li className="flex items-start transform transition duration-300 hover:translate-x-2 text-black">
                       <span className="font-medium mr-2 text-black">•</span>
                       <span>Assign & track tasks</span>
@@ -665,7 +674,7 @@ export default function Home() {
                       <span>Monitor productivity from your dashboard</span>
                     </li>
                   </ul>
-                  <p className="text-lg font-medium text-gray-800">
+                  <p className="text-base md:text-lg font-medium text-gray-800">
                     Your team's day just got 10x more productive.
                   </p>
                 </div>
@@ -674,7 +683,7 @@ export default function Home() {
           </div>
 
           {/* Feature Section: Client Management */}
-          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-tr from-purple-50 to-purple-100">
+          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-tr from-purple-50 to-purple-100 rounded-tl-[4rem] rounded-tr-[4rem]">
             {/* Background pattern - network connections */}
             <div className="absolute inset-0 opacity-5">
               <svg width="100%" height="100%" className="absolute">
@@ -713,33 +722,33 @@ export default function Home() {
             <div className="container mx-auto px-6 relative z-10">
               <div className="flex flex-col md:flex-row items-stretch max-w-7xl mx-auto">
                 {/* Left side - Image */}
-                <div className="w-full md:w-3/5 mb-10 md:mb-0 px-4 flex">
-                  <div className="bg-transparent rounded-lg w-full min-h-[350px] shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden">
+                <div className="w-full md:w-3/5 mb-6 md:mb-10 px-2 md:px-4 flex">
+                  <div className="bg-transparent rounded-lg w-full shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden flex items-center justify-center">
                     <img 
                       src="/client.png" 
                       alt="Client Management Dashboard"
-                      className="w-full h-full object-contain"
+                      className="w-full h-auto object-contain rounded-lg"
                     />
                   </div>
                 </div>
 
                 {/* Right side - Content */}
-                <div className="w-full md:w-2/5 md:pl-10 px-4 flex flex-col justify-center">
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <div className="w-full md:w-2/5 md:pl-10 px-2 md:px-4 flex flex-col justify-center">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                     Client Management
                   </h3>
-                  <h4 className="text-xl md:text-2xl font-semibold text-purple-600 mb-4">
+                  <h4 className="text-lg md:text-xl lg:text-2xl font-semibold text-purple-600 mb-3 md:mb-4">
                     Know Your Clients, Inside and Out
                   </h4>
-                  <p className="text-lg text-gray-700 mb-6">
+                  <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                     Upload, organize, and centralize all your client data in one
                     place.
                   </p>
-                  <p className="text-lg text-gray-700 mb-6">
+                  <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                     Admins control what goes in, and the rest of the team can
                     access exactly what they need—instantly.
                   </p>
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-2 md:space-y-4 mb-6 md:mb-8">
                     <li className="flex items-start transform transition duration-300 hover:translate-x-2 text-black">
                       <span className="font-medium mr-2 text-black">•</span>
                       <span>Secure client records</span>
@@ -753,7 +762,7 @@ export default function Home() {
                       <span>Stronger client relationships</span>
                     </li>
                   </ul>
-                  <p className="text-lg font-medium text-gray-800">
+                  <p className="text-base md:text-lg font-medium text-gray-800">
                     No more Excel sheets. No more data silos.
                   </p>
                 </div>
@@ -762,7 +771,7 @@ export default function Home() {
           </div>
 
           {/* Feature Section: Group Chat */}
-          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-50 to-white">
+          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-50 to-white rounded-tl-[4rem] rounded-tr-[4rem]">
             {/* Background pattern - speech bubbles */}
             <div className="absolute inset-0 opacity-5">
               <svg width="100%" height="100%" className="absolute">
@@ -794,32 +803,32 @@ export default function Home() {
             <div className="container mx-auto px-6 relative z-10">
               <div className="flex flex-col md:flex-row-reverse items-stretch max-w-7xl mx-auto">
                 {/* Right side - Image */}
-                <div className="w-full md:w-3/5 mb-10 md:mb-0 px-4 flex">
-                  <div className="bg-transparent rounded-lg w-full min-h-[350px] shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden">
+                <div className="w-full md:w-3/5 mb-6 md:mb-10 px-2 md:px-4 flex">
+                  <div className="bg-transparent rounded-lg w-full shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden flex items-center justify-center">
                     <img 
                       src="/chat.png" 
                       alt="Group Chat Interface"
-                      className="w-full h-full object-contain"
+                      className="w-full h-auto object-contain rounded-lg"
                     />
                   </div>
                 </div>
 
                 {/* Left side - Content */}
-                <div className="w-full md:w-2/5 md:pr-10 px-4 flex flex-col justify-center">
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <div className="w-full md:w-2/5 md:pr-10 px-2 md:px-4 flex flex-col justify-center">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                     Group Chat
                   </h3>
-                  <h4 className="text-xl md:text-2xl font-semibold text-yellow-600 mb-4">
+                  <h4 className="text-lg md:text-xl lg:text-2xl font-semibold text-yellow-600 mb-3 md:mb-4">
                     One Team. One Thread.
                   </h4>
-                  <p className="text-lg text-gray-700 mb-6">
+                  <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                     Bring your whole team together.
                   </p>
-                  <p className="text-lg text-gray-700 mb-6">
+                  <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                     Discuss tasks, brainstorm ideas, or make quick decisions in
                     real-time with our built-in group chat.
                   </p>
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-2 md:space-y-4 mb-6 md:mb-8">
                     <li className="flex items-start transform transition duration-300 hover:translate-x-2 text-black">
                       <span className="font-medium mr-2 text-black">•</span>
                       <span>Fast internal communication</span>
@@ -839,7 +848,7 @@ export default function Home() {
           </div>
 
           {/* Feature Section: Smart Dashboard */}
-          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-tr from-orange-50 to-orange-100">
+          <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-gradient-to-tr from-orange-50 to-orange-100 rounded-tl-[4rem] rounded-tr-[4rem]">
             {/* Background pattern - dashboard graphs */}
             <div className="absolute inset-0 opacity-5">
               <svg width="100%" height="100%" className="absolute">
@@ -898,28 +907,28 @@ export default function Home() {
             <div className="container mx-auto px-6 relative z-10">
               <div className="flex flex-col md:flex-row items-stretch max-w-7xl mx-auto">
                 {/* Left side - Image */}
-                <div className="w-full md:w-3/5 mb-10 md:mb-0 px-4 flex">
-                  <div className="bg-transparent rounded-lg w-full min-h-[350px] shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden">
+                <div className="w-full md:w-3/5 mb-6 md:mb-10 px-2 md:px-4 flex">
+                  <div className="bg-transparent rounded-lg w-full shadow-xl transform transition duration-500 hover:scale-105 overflow-hidden flex items-center justify-center">
                     <img 
                       src="/dashboard.png" 
                       alt="Smart Dashboard"
-                      className="w-full h-full object-contain"
+                      className="w-full h-auto object-contain rounded-lg"
                     />
                   </div>
                 </div>
 
                 {/* Right side - Content */}
-                <div className="w-full md:w-2/5 md:pl-10 px-4 flex flex-col justify-center">
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <div className="w-full md:w-2/5 md:pl-10 px-2 md:px-4 flex flex-col justify-center">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                     Smart Dashboard
                   </h3>
-                  <h4 className="text-xl md:text-2xl font-semibold text-orange-600 mb-4">
+                  <h4 className="text-lg md:text-xl lg:text-2xl font-semibold text-orange-600 mb-3 md:mb-4">
                     Insights That Drive Action
                   </h4>
-                  <p className="text-lg text-gray-700 mb-6">
+                  <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">
                     See what matters—at a glance.
                   </p>
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-2 md:space-y-4 mb-6 md:mb-8">
                     <li className="flex items-start transform transition duration-300 hover:translate-x-2 text-black">
                       <span className="font-medium mr-2 text-black">•</span>
                       <span>Real-time task updates</span>
@@ -933,7 +942,7 @@ export default function Home() {
                       <span>Key business metrics</span>
                     </li>
                   </ul>
-                  <p className="text-lg font-medium text-gray-800">
+                  <p className="text-base md:text-lg font-medium text-gray-800">
                     All in one visual, intuitive dashboard.
                   </p>
                 </div>
@@ -1005,10 +1014,10 @@ export default function Home() {
           </div>
 
           <div className="container mx-auto px-6 relative z-10 text-center">
-            <h2 className="text-5xl font-bold mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8">
               Ready to Take Control of Your Business?
             </h2>
-            <p className="text-2xl mb-12 max-w-3xl mx-auto">
+            <p className="text-lg md:text-2xl mb-8 md:mb-12 max-w-3xl mx-auto">
               Start your journey with OfficeHour today. Get a free walkthrough
               and see how effortless business management can be.
             </p>
@@ -1167,11 +1176,12 @@ export default function Home() {
 
           {/* Add this CSS for the star button */}
           <style jsx>{`
+
             .star-button {
               position: relative;
-              padding: 12px 35px;
+              padding: 10px 20px;
               background: #000000;
-              font-size: 18px;
+              font-size: 14px;
               font-weight: 500;
               color: #fff;
               border: 3px solid #fec195;
@@ -1179,6 +1189,13 @@ export default function Home() {
               box-shadow: 0 0 0 #fec1958c;
               transition: all 0.3s ease-in-out;
               cursor: pointer;
+            }
+
+            @media (min-width: 768px) {
+              .star-button {
+                padding: 12px 35px;
+                font-size: 18px;
+              }
             }
 
             .star-1 {
